@@ -3,7 +3,7 @@
   <head>
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Calypte Cache</title>
+	<title>Laravel - Calypte</title>
 	<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -267,8 +267,8 @@ a[name]{
       <div class="panel-body">
 		<ul class="menu">      
 			<li><a href="laravel.html">Instalação</a></li>
-			<li><a href="laravel.html#configuracao_do_cache_php">Configuração do cache.html</a></li>
-			<li><a href="laravel.html#configuracao_do_app_php">Configuração do app.html</a></li>
+			<li><a href="laravel.html#configuracao_do_cache_php">Configuração do cache.php</a></li>
+			<li><a href="laravel.html#configuracao_do_app_php">Configuração do app.php</a></li>
 			<li><a href="laravel.html#configuracao_do__env">Configuração do .env</a></li>
 		</ul>
       </div>
@@ -309,9 +309,9 @@ de dados na memória secundária do servidor.</p>
 comando <code>composer require calypte/calypte</code>.</p>
 
 <a name="configuracao_do_cache_php"></a>
-<h2>Configuração do cache.html</h2>
+<h2>Configuração do cache.php</h2>
 
-<p>Aguarde o termino da atualização do projeto e abra o arquivo <code>config/cache.html</code> e dentro do
+<p>Aguarde o termino da atualização do projeto e abra o arquivo <code>config/cache.php</code> e dentro do
 	arranjo <code>stores[]</code> adicione:</p>
 	<pre class="brush: php;">'calypte' => [
 			'driver' => 'calypte',
@@ -367,9 +367,9 @@ comando <code>composer require calypte/calypte</code>.</p>
 ...</pre>
 
 <a name="configuracao_do_app_php"></a>
-<h2>Configuração do app.html</h2>
+<h2>Configuração do app.php</h2>
 
-<p>Abra o arquivo <code>config/app.html</code> e dentro do arranjo <code>providers[]</code> adicione
+<p>Abra o arquivo <code>config/app.php</code> e dentro do arranjo <code>providers[]</code> adicione
 <code>calypte\CalypteServiceProvider::class</code>.</p>
 <p>O arquivo vai ficar parecido com:</p>
 <pre class="brush: php;">'providers' => [
