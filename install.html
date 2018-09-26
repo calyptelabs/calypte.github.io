@@ -106,7 +106,7 @@ a[name]{
 			<li><a href="install.html">Pré-requisitos</a></li>
 			<li><a href="install.html#obtendo_os_arquivos_binarios">Obtendo os arquivos binários</a></li>
 			<li><a href="install.html#instalando_o_pacote_binario">Instalando o pacote binário</a></li>
-			<li><a href="install.html#instalando_no_windows">Instalando no windows</a></li>
+			<li><a href="install.html#microsoft_windows_e_linux">Instalando no Windows e Linux</a></li>
 			<li><a href="install.html#teste_basico_de_instalacao">Teste básico de instalação</a></li>
 			<li><a href="install.html#estrutura_de_diretorios">Estrutura de diretórios</a></li>
 			<li><a href="install.html#arquivo_de_configuracao">Arquivo de configuração</a></li>
@@ -326,52 +326,121 @@ a[name]{
 				local de sua escolha. O processo de extração criará o diretório
 				<code>calypte-yy-xx</code>.</p>
 			
-			<a name="instalando_no_windows"></a>
-			<h2>Instalando no windows</h2>
+			<a name="microsoft_windows_e_linux"></a>
 			
-			<p>O calypte é independente de plataforma. Podendo ser
-				executado em qualquer sistema operacional, desde que tenha uma
-				máquina virtual instalada. Para o Windows, foi disponibilizado um
-				instalador para facilitar sua instalação e configuração. O
-				download do instalador pode ser feito acessando a página do
-				calypte no Sourceforge.</p>
-			<p>Obs: Caso não tenha uma JRE instalada, o download pode ser
-				feito em <a href="http://www.java.com/en/download/manual.jsp#win">http://www.java.com/en/download/manual.jsp#win</a>.</p>
-			<p>Depois de feito o download é necessário executar o arquivo
-				calypte-server-xx-xx.exe. Na execução da instalação, algumas
-				informações serão pedidas.</p> 
-			<p>Na primeira etapa será perguntado o
-				local onde o servidor será instalado. Depois de informado, aperte
-				o botão Next. Se não for um usuário avançado, deixe como está.
-				Depois de selecionado o local, será perguntado o nome do grupo
-				onde os atalhos serão registrados. Depois de informado, aperte o
-				botão Next. Se não for um usuário avançado, deixe como está.
-				Depois de selecionado o grupo, será perguntado o tipo de
-				instância do servidor calypte. Depois de informado, aperte o
-				botão Next. Se não for um usuário avançado, deixe como está.</p>
+			<h3>Instalando no Microsoft Windows e Linux</h3>
+			
+			<p>Para instalar o calypte:</p>
+			
 			<ul>
-				<li>Developer Machine​: Escolha esta opção para uma estação
-					de trabalho típico onde o calypte é apenas para uso pessoal.
-					Supõe-se que muitas outras aplicações desktop estão em execução.
-					O servidor calypte será configurado para utilizar o mínimo de
-					recursos do sistema.</li>
-				<li>Server Machine​: Escolha esta opção para uma máquina
-					servidor onde o servidor calypte está rodando ao lado de outros
-					aplicativos servidores, como FTP, e-mail e servidores Web. O
-					servidor calypte será configurado para usar uma porção moderada
-					dos recursos do sistema.</li>
-				<li>Dedicated Server Machine​: Escolha esta opção para uma
-					máquina servidor que se destina a executar apenas o servidor
-					calypte. Supõe-se que não existem outras aplicações em execução.
-					O servidor calypte será configurado para usar todos os recursos
-					disponíveis do sistema.</li>
+				<li>Após concluir o download do arquivo ZIP, extraia-o em qualquer pasta do sistema.
+					<ul>
+						<li>Para Windows, o arquivo executável do instalador tem a extensão .bat. Clique duas vezes no arquivo para executá-lo.</li>
+						<li>Nas plataformas Linux, o arquivo do instalador tem a extensão .sh. Nessas plataformas, é preciso criar os arquivos 
+						executáveis do instalador usando este comando: chmod +x setup.sh. Digite ./setup.sh para executar o instalador.</li>
+					</ul>
+				</li>
+				<li>Selecione a pasta de destino. Por padrão, o servidor é instalado na pasta do usuário.</li>
+				<li>Clique em próximo.</li>
+				<li>Se a instalação for feita no windows, é permitido selecionar o grupo do menu iniciar que serão inseridos os atalhos.</li>
+				<li>Clique em próximo.</li>
+				<li>Confirme se o servidor deve ser iniciado junto com o sistema operacional.</li>
+				<li>Clique em próximo.</li>
+				<li>Selecione o tipo de instâcia a ser executado:
+					<ul>
+						<li>Developer Machine​: Escolha esta opção para uma estação
+							de trabalho típico onde o calypte é apenas para uso pessoal.
+							Supõe-se que muitas outras aplicações desktop estão em execução.
+							O servidor calypte será configurado para utilizar o mínimo de
+							recursos do sistema.</li>
+						<li>Server Machine​: Escolha esta opção para uma máquina
+							servidor onde o servidor calypte está rodando ao lado de outros
+							aplicativos servidores, FTP, e-mail e servidores Web. O
+							servidor calypte será configurado para usar uma porção moderada
+							dos recursos do sistema.</li>
+						<li>Dedicated Server Machine​: Escolha esta opção para uma
+							máquina servidor que se destina a executar apenas o servidor
+							calypte. Supõe-se que não existem outras aplicações em execução.
+							O servidor calypte será configurado para usar todos os recursos
+							disponíveis do sistema.</li>
+					</ul>				
+				</li>
+				<li>Clique em próximo.</li>
+				<li>Revise as configurações da instalação.</li>
+				<li>Clique em instalar.</li>
+				<li>Aguarde o fim da instalação e clique finalizar.</li>
+			</ul>
+			
+
+			<a name="pacote_independente_de_plataforma"></a>
+			<h3>Pacote Independente de Plataforma</h3>
+			
+			<p>Para executar o software:</p>
+
+			<ul>
+				<li>Após fazer download do arquivo ZIP independente de plataforma, extraia-o em qualquer pasta do sistema.</li>
+				<li>Execute java -jar setup.jar.</li>
+				<li>Selecione a pasta de destino. Por padrão, a servidor é instalado na pasta do usuário.</li>
+				<li>Clique em próximo.</li>
+				<li>Selecione o tipo de instâcia a ser executado:
+					<ul>
+						<li>Developer Machine​: Escolha esta opção para uma estação
+							de trabalho típico onde o calypte é apenas para uso pessoal.
+							Supõe-se que muitas outras aplicações desktop estão em execução.
+							O servidor calypte será configurado para utilizar o mínimo de
+							recursos do sistema.</li>
+						<li>Server Machine​: Escolha esta opção para uma máquina
+							servidor onde o servidor calypte está rodando ao lado de outros
+							aplicativos servidores, FTP, e-mail e servidores Web. O
+							servidor calypte será configurado para usar uma porção moderada
+							dos recursos do sistema.</li>
+						<li>Dedicated Server Machine​: Escolha esta opção para uma
+							máquina servidor que se destina a executar apenas o servidor
+							calypte. Supõe-se que não existem outras aplicações em execução.
+							O servidor calypte será configurado para usar todos os recursos
+							disponíveis do sistema.</li>
+					</ul>				
+				</li>
+				<li>Clique em próximo.</li>
+				<li>Revise as configurações da instalação.</li>
+				<li>Clique em instalar.</li>
+				<li>Aguarde o fim da instalação e clique finalizar.</li>
 			</ul>
 
-			<p>Verifique se está tudo correto e aperte o botão Install.
-				Após o término da instalação, aperte o botão Finish. Nesse
-				momento o servidor já estará em execução.</p>
+
+			<a name="desinstalando_o_calypte"></a>
+			
+			<h2>Desinstalando o Calypte</h2>
+			
+			<p>Siga as instruções nesta seção para desinstalar o servidor do seu sistema. 
+			Estas instruções de desinstalação se aplicam a todas as plataformas compatíveis.</p>
+
+			<h3>Microsoft Windows</h3>
+			
+			<p>Se necessário, é possível desinstalar o Calypte utilizando os procedimentos a seguir.</p>
+
+			<ul>
+				<li>Faça shutdown do Servidor.</li>
+				<li>No menu iniciar procure por Calypte ou Calypte Uninstaller. Clique duas vezes em Calypte Uninstaller.</li>
+				<li>Confirme a desinstalação.</li>
+			</ul>
+
+
+			<h3>Linux</h3>
+			<p>Se necessário, é possível desinstalar o servidor utilizando os procedimentos a seguir.</p>
+
+			<ul>
+				<li>Faça shutdown do Servidor.</li>
+				<li>No menu iniciar procure por Calypte ou Calypte Uninstaller. Clique duas vezes em Calypte Uninstaller.</li>
+				<li>Confirme a desinstalação.</li>
+			</ul>
+
+
+			<h3>Pacote Independente de Plataforma</h3>
+			<p>Para desinstalar os arquivos do servidor, execute java -jar uninstaller.jar.</path>
 
 			<a name="teste_basico_de_instalacao"></a>
+			
 			<h2>Teste básico de instalação</h2>
 
 			<p>Depois de ter instalado o calypte, é aconselhável realizar
