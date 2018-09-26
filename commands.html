@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Calypte Cache</title>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../../favicon.ico">
+
+<!-- Bootstrap core CSS -->
+<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="./lib/assets/css/ie10-viewport-bug-workaround.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="./lib/offcanvas/css/offcanvas.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="./lib/assets/js/ie-emulation-modes-warning.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushBash.js"></script>
+<link type="text/css" rel="stylesheet" href="./lib/SyntaxHighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+    
+<style>
+<!--
+a[name]{
+	float: inherit; 
+	margin-top: -60px;
+}
+
+.menu li{
+	list-style-type: none;
+	margin-left: -30px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.menu li > a{
+    display: block;
+    padding: 2px 2px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #767676;
+    cursor: pointer;
+}
+
+-->
+</style>     
+  </head>
+
+  <body>
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">Calypte</a>
+</div>
+<div id="navbar" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="index.php">Início</a></li>
+<li><a href="download.php">Download</a></li>
+<!-- <li><a href="changelog.php">ChangeLog</a></li> -->
+</ul>
+</div><!-- /.nav-collapse -->
+</div><!-- /.container -->
+</nav><!-- /.navbar -->
+ 
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+			<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Instalação</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+		<ul class="menu">
+			<li><a href="install.php">Pré-requisitos</a></li>
+			<li><a href="install.php#obtendo_os_arquivos_binarios">Obtendo os arquivos binários</a></li>
+			<li><a href="install.php#instalando_o_pacote_binario">Instalando o pacote binário</a></li>
+			<li><a href="install.php#instalando_no_windows">Instalando no windows</a></li>
+			<li><a href="install.php#teste_basico_de_instalacao">Teste básico de instalação</a></li>
+			<li><a href="install.php#estrutura_de_diretorios">Estrutura de diretórios</a></li>
+			<li><a href="install.php#arquivo_de_configuracao">Arquivo de configuração</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Manipulação de dados</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+      
+		<ul class="menu">
+			<li><h5>Adicionando itens</h5></li>
+			<li><a href="commands.php">Comando put</a></li>
+			<li><a href="commands.php#replace">Comando replace</a></li>
+			<li><a href="commands.php#set">Comando set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a href="commands.php#get">Comando get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a href="commands.php#remove">Comando remove</a></li>
+		</ul>
+      
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Transações</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="transaction.php">Níveis de isolamento suportados</a></li>
+			<li><a href="transaction.php#iniciando_uma_transacao">Iniciando uma transação</a></li>
+			<li><a href="transaction.php#begin">Comando begin</a></li>
+			<li><a href="transaction.php#commit">Comando commit</a></li>
+			<li><a href="transaction.php#rollback">Comando rollback</a></li>
+			<li><a href="transaction.php#modo_de_confirmacao_automatica">Modo de confirmação automática</a></li>
+			<li><a href="transaction.php#evitando_a_leitura_fantasma_e_leitura_nao_repetitiva">Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+        Calypte em aplicações PHP</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="php.php">Instalação</a></li>
+			<li><a href="php.php#maniputacao_de_dados">Manipulação de dados</a></li>
+			<li><h5>Adicionando itens</h5></li>
+			<li><a href="php.php#put">Função put</a></li>
+			<li><a href="php.php#replace">Função replace</a></li>
+			<li><a href="php.php#replace">Função replaceValue</a></li>
+			<li><a href="php.php#set">Função set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a href="php.php#get">Função get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a href="php.php#remove">Função remove</a></li>
+			<li><a href="php.php#remove">Função removeValue</a></li>
+			<li><h5>Transação</h5></li>
+			<li><a>Iniciando uma transação</a></li>
+			<li><a href="php.php#begin">Função begin</a></li>
+			<li><a href="php.php#commit">Função commit</a></li>
+			<li><a href="php.php#rollback">Função rollback</a></li>
+			<li><a href="php.php#setautocommit">Funcão setAutoCommit</a></li>
+			<li><a href="php.php#evitando_a_leitura_fantasma_e_a_leitura_nao_repetitiva">Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+        Calypte em uma aplicação Java</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="java.php">Instalação</a></li>
+			<li><a href="java.php#manipulacao_de_dados">Manipulação de dados</a></li>
+			<li><h5>Adicionando itens</h5></li>
+			<li><a href="java.php#put">Método put</a></li>
+			<li><a href="java.php#replace">Método replace</a></li>
+			<li><a href="java.php#set">Método set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a href="java.php#get">Método get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a href="java.php#remove">Método remove</a></li>
+			<li><h5>Transação</h5></li>
+			<li><a href="java.php#iniciando_uma_transacao">Iniciando uma transação</a></li>
+			<li><a href="java.php#begin">Método begin</a></li>
+			<li><a href="java.php#commit">Método commit</a></li>
+			<li><a href="java.php#rollback">Método rollback</a></li>
+			<li><a href="java.php#setautocommit">Método setAutoCommit</a></li>
+			<li><a href="java.php#evitando_a_leitura_fantasma_e_leitura_nao_repetitiva">Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+        Calypte em uma aplicação Node.js</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a>Instalando o cliente</a></li>
+			<li><h5>Adicionando itens</h5></li>
+			<li><a>O comando put</a></li>
+			<li><a>O comando replace</a></li>
+			<li><a>O comando set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a>O comando get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a>O comando remove</a></li>
+			<li><h5>Transação</h5></li>
+			<li><a>Iniciando uma transação</a></li>
+			<li><a>O comando begin</a></li>
+			<li><a>O comando commit</a></li>
+			<li><a>O comando rollback</a></li>
+			<li><a>Modo de confirmação automática</a></li>
+			<li><a>Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>  
+   -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+        Aplicações Laravel com Calypte</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="laravel.php">Instalação</a></li>
+			<li><a href="laravel.php#configuracao_do_cache_php">Configuração do cache.php</a></li>
+			<li><a href="laravel.php#configuracao_do_app_php">Configuração do app.php</a></li>
+			<li><a href="laravel.php#configuracao_do__env">Configuração do .env</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>  
+</div> 
+        </div><!--/.sidebar-offcanvas-->
+
+        <div class="col-xs-12 col-sm-9">
+			<h1>Manipulação de dados</h1>
+
+<p>O cache oferece um conjunto de comandos que permitem manipular os
+	dados no cache.</p>
+<p></p>
+
+<a name="adicionando_itens"></a>
+<h2>Adicionando itens</h2>
+<p>São oferecidos vários comandos para inserir um item no cache. Cada um
+	com sua particularidade.</p>
+
+<a name="put"></a>
+<h3>Comando put</h3>
+<p>
+	O comando put associa um valor a uma chave, mesmo que ela exista. Ele
+	retorna
+	<code>replaced</code>
+	, se existir um valor associado à chave, ou
+	<code>stored</code>
+	, se não existir um valor associado à chave.
+</p>
+<p>Ele possui o seguinte formato:</p>
+<pre class="brush: bash;">put &lt;key&gt; &lt;timeToLive&gt; &lt;timeToIdle&gt; &lt;size&gt; &lt;reserved&gt;
+&lt;data&gt;</pre>
+<ul>
+	<li><b>key</b>: chave associada ao valor;</li>
+	<li><b>timeToLive</b>: é a quantidade máxima de tempo que um item
+		expira após sua criação;</li>
+	<li><b>timeToIdle</b>:é a quantidade máxima de tempo que um item expira
+		após o último acesso;</li>
+	<li><b>size</b>: tamanho em bytes do item a ser inserido;</li>
+	<li><b>reserved</b>: reservado;</li>
+	<li><b>data</b>: dados do item a ser inserido. Tem que ser o mesmo que
+		foi informado em <code>size</code>.</li>
+</ul>
+<pre class="brush: bash;">put key 0 0 5 0
+teste
+stored
+</pre>
+
+<a name="replace"></a>
+<h3>Comando replace</h3>
+<p>
+	O comando
+	<code>replace</code>
+	substitui o valor associado à chave somente se ele existir. Ele retorna
+	<code>replaced</code>
+	, se o valor for substituido, ou
+	<code>not_stored</code>
+	, se o valor não for armazenado.
+</p>
+<p>Ele possui o seguinte formato:</p>
+<pre class="brush: bash;">replace &lt;key&gt; &lt;timeToLive&gt; &lt;timeToIdle&gt; &lt;size&gt; &lt;reserved&gt;
+&lt;data&gt;</pre>
+<ul>
+	<li><b>key</b>: chave associada ao valor;</li>
+	<li><b>timeToLive</b>: é a quantidade máxima de tempo que um item
+		expira após sua criação;</li>
+	<li><b>timeToIdle</b>:é a quantidade máxima de tempo que um item expira
+		após o último acesso;</li>
+	<li><b>size</b>: tamanho em bytes do item a ser inserido;</li>
+	<li><b>reserved</b>: reservado;</li>
+	<li><b>data</b>: dados do item a ser inserido. Tem que ser o mesmo que
+		foi informado em <code>size</code>.</li>
+</ul>
+<pre class="brush: bash;">replace key 0 0 5 0
+teste
+not_stored
+</pre>
+
+<a name="set"></a>
+<h3>Comando set</h3>
+<p>
+	O comando
+	<code>set</code>
+	associa o valor à chave somente se a chave não estiver associada a um
+	valor. Ele retorna
+	<code>stored</code>
+	, se o valor for inserido, ou
+	<code>not_stored</code>
+	, se o valor não for armazenado. Esse comando tem uma particularidade.
+	Quando existe um valor associado à chave, o mesmo é retornado, mas
+	ocorrerá um error se ele expirar no momento em que for recuperado.
+</p>
+<p>Ele possui o seguinte formato:</p>
+<pre class="brush: bash;">set &lt;key&gt; &lt;timeToLive&gt; &lt;timeToIdle&gt; &lt;size&gt; &lt;reserved&gt;
+&lt;data&gt;</pre>
+<ul>
+	<li><b>key</b>: chave associada ao valor;</li>
+	<li><b>timeToLive</b>: é a quantidade máxima de tempo que um item
+		expira após sua criação;</li>
+	<li><b>timeToIdle</b>:é a quantidade máxima de tempo que um item expira
+		após o último acesso;</li>
+	<li><b>size</b>: tamanho em bytes do item a ser inserido;</li>
+	<li><b>reserved</b>: reservado;</li>
+	<li><b>data</b>: dados do item a ser inserido. Tem que ser o mesmo que
+		foi informado em <code>size</code>.</li>
+</ul>
+<pre class="brush: bash;">set key 0 0 5 0
+teste
+stored
+</pre>
+
+<h2>Recuperando itens</h2>
+
+<a name="get"></a>
+<h3>Comando get</h3>
+
+<p>
+	Um valor é obtido com o uso do coamndo
+	<code>get</code>
+	. Ele retorna o valor associado à chave. Ele também permite o bloqueio
+	da chave em uma transação. A resposta sempre termina com
+	<code>end</code>
+	.
+</p>
+<p>Ele possui o seguinte formato:</p>
+<pre class="brush: bash;">get &lt;key&gt; &lt;update&gt; &lt;reserved&gt;
+</pre>
+<ul>
+	<li><b>key</b>: chave associada ao valor;</li>
+	<li><b>update</b>: bloqueia a chave para atualização. Se for diferente
+		de 0, ela será bloqueada para outras transações;</li>
+	<li><b>reserved</b>: reservado;</li>
+</ul>
+<pre class="brush: bash;">get key 0
+value key 5 0
+teste
+end
+</pre>
+<p>
+	A resposta do comando
+	<code>get</code>
+	tem o seguinte formato:
+</p>
+<pre class="brush: bash;">value &lt;key&gt; &lt;size&gt; &lt;reserved&gt;
+&lt;data&gt;</pre>
+<ul>
+	<li><b>key</b>: chave associada ao valor;</li>
+	<li><b>size</b>: tamanho em bytes do item;</li>
+	<li><b>reserved</b>: reservado;</li>
+	<li><b>data</b>: dados do item com tamanho igual à <code>size</code>.</li>
+</ul>
+
+<h2>Removendo itens</h2>
+
+<a name="remove"></a>
+<h3>Comando remove</h3>
+<p>
+	O comando
+	<code>remove</code>
+	apaga o valor associado à chave. Ele retorna
+	<code>ok</code>
+	, se o valor for removido, ou
+	<code>not_found</code>
+	, se ele não existir.
+</p>
+<p>Ele possui o seguinte formato:</p>
+<pre class="brush: bash;">remove &lt;key&gt; &lt;reserved&gt;
+</pre>
+<ul>
+	<li><b>key</b>: chave associada ao valor;</li>
+	<li><b>reserved</b>: reservado;</li>
+</ul>
+<pre class="brush: bash;">remove key 0
+ok
+</pre>
+ 
+        </div><!--/.col-xs-12.col-sm-9-->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2018 Calypte Labs.</p>
+      </footer>
+
+    </div><!--/.container-->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./lib/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./lib/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./lib/offcanvas/js/offcanvas.js"></script>
+  </body>
+</html>

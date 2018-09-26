@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Calypte Cache</title>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../../favicon.ico">
+
+<!-- Bootstrap core CSS -->
+<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="./lib/assets/css/ie10-viewport-bug-workaround.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="./lib/offcanvas/css/offcanvas.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="./lib/assets/js/ie-emulation-modes-warning.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="./lib/SyntaxHighlighter/scripts/shBrushBash.js"></script>
+<link type="text/css" rel="stylesheet" href="./lib/SyntaxHighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+    
+<style>
+<!--
+a[name]{
+	float: inherit; 
+	margin-top: -60px;
+}
+
+.menu li{
+	list-style-type: none;
+	margin-left: -30px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.menu li > a{
+    display: block;
+    padding: 2px 2px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #767676;
+    cursor: pointer;
+}
+
+-->
+</style>     
+  </head>
+
+  <body>
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">Calypte</a>
+</div>
+<div id="navbar" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="index.php">Início</a></li>
+<li><a href="download.php">Download</a></li>
+<!-- <li><a href="changelog.php">ChangeLog</a></li> -->
+</ul>
+</div><!-- /.nav-collapse -->
+</div><!-- /.container -->
+</nav><!-- /.navbar -->
+ 
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+			<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Instalação</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+		<ul class="menu">
+			<li><a href="install.php">Pré-requisitos</a></li>
+			<li><a href="install.php#obtendo_os_arquivos_binarios">Obtendo os arquivos binários</a></li>
+			<li><a href="install.php#instalando_o_pacote_binario">Instalando o pacote binário</a></li>
+			<li><a href="install.php#instalando_no_windows">Instalando no windows</a></li>
+			<li><a href="install.php#teste_basico_de_instalacao">Teste básico de instalação</a></li>
+			<li><a href="install.php#estrutura_de_diretorios">Estrutura de diretórios</a></li>
+			<li><a href="install.php#arquivo_de_configuracao">Arquivo de configuração</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Manipulação de dados</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+      
+		<ul class="menu">
+			<li><h5>Adicionando itens</h5></li>
+			<li><a href="commands.php">Comando put</a></li>
+			<li><a href="commands.php#replace">Comando replace</a></li>
+			<li><a href="commands.php#set">Comando set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a href="commands.php#get">Comando get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a href="commands.php#remove">Comando remove</a></li>
+		</ul>
+      
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Transações</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="transaction.php">Níveis de isolamento suportados</a></li>
+			<li><a href="transaction.php#iniciando_uma_transacao">Iniciando uma transação</a></li>
+			<li><a href="transaction.php#begin">Comando begin</a></li>
+			<li><a href="transaction.php#commit">Comando commit</a></li>
+			<li><a href="transaction.php#rollback">Comando rollback</a></li>
+			<li><a href="transaction.php#modo_de_confirmacao_automatica">Modo de confirmação automática</a></li>
+			<li><a href="transaction.php#evitando_a_leitura_fantasma_e_leitura_nao_repetitiva">Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+        Calypte em aplicações PHP</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="php.php">Instalação</a></li>
+			<li><a href="php.php#maniputacao_de_dados">Manipulação de dados</a></li>
+			<li><h5>Adicionando itens</h5></li>
+			<li><a href="php.php#put">Função put</a></li>
+			<li><a href="php.php#replace">Função replace</a></li>
+			<li><a href="php.php#replace">Função replaceValue</a></li>
+			<li><a href="php.php#set">Função set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a href="php.php#get">Função get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a href="php.php#remove">Função remove</a></li>
+			<li><a href="php.php#remove">Função removeValue</a></li>
+			<li><h5>Transação</h5></li>
+			<li><a>Iniciando uma transação</a></li>
+			<li><a href="php.php#begin">Função begin</a></li>
+			<li><a href="php.php#commit">Função commit</a></li>
+			<li><a href="php.php#rollback">Função rollback</a></li>
+			<li><a href="php.php#setautocommit">Funcão setAutoCommit</a></li>
+			<li><a href="php.php#evitando_a_leitura_fantasma_e_a_leitura_nao_repetitiva">Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+        Calypte em uma aplicação Java</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="java.php">Instalação</a></li>
+			<li><a href="java.php#manipulacao_de_dados">Manipulação de dados</a></li>
+			<li><h5>Adicionando itens</h5></li>
+			<li><a href="java.php#put">Método put</a></li>
+			<li><a href="java.php#replace">Método replace</a></li>
+			<li><a href="java.php#set">Método set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a href="java.php#get">Método get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a href="java.php#remove">Método remove</a></li>
+			<li><h5>Transação</h5></li>
+			<li><a href="java.php#iniciando_uma_transacao">Iniciando uma transação</a></li>
+			<li><a href="java.php#begin">Método begin</a></li>
+			<li><a href="java.php#commit">Método commit</a></li>
+			<li><a href="java.php#rollback">Método rollback</a></li>
+			<li><a href="java.php#setautocommit">Método setAutoCommit</a></li>
+			<li><a href="java.php#evitando_a_leitura_fantasma_e_leitura_nao_repetitiva">Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+        Calypte em uma aplicação Node.js</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a>Instalando o cliente</a></li>
+			<li><h5>Adicionando itens</h5></li>
+			<li><a>O comando put</a></li>
+			<li><a>O comando replace</a></li>
+			<li><a>O comando set</a></li>
+			<li><h5>Recuperando itens</h5></li>
+			<li><a>O comando get</a></li>
+			<li><h5>Removendo itens</h5></li>
+			<li><a>O comando remove</a></li>
+			<li><h5>Transação</h5></li>
+			<li><a>Iniciando uma transação</a></li>
+			<li><a>O comando begin</a></li>
+			<li><a>O comando commit</a></li>
+			<li><a>O comando rollback</a></li>
+			<li><a>Modo de confirmação automática</a></li>
+			<li><a>Evitando a leitura fantasma e leitura não repetitiva</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>  
+   -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+        Aplicações Laravel com Calypte</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse">
+      <div class="panel-body">
+		<ul class="menu">      
+			<li><a href="laravel.php">Instalação</a></li>
+			<li><a href="laravel.php#configuracao_do_cache_php">Configuração do cache.php</a></li>
+			<li><a href="laravel.php#configuracao_do_app_php">Configuração do app.php</a></li>
+			<li><a href="laravel.php#configuracao_do__env">Configuração do .env</a></li>
+		</ul>
+      </div>
+    </div>
+  </div>  
+</div> 
+        </div><!--/.sidebar-offcanvas-->
+
+        <div class="col-xs-12 col-sm-9">
+			<h1>Transações</h1>
+<p>Uma transação é uma coleção de operações que
+desempenha uma função lógica única. Ela tem que ter as seguintes
+propriedades:</p>
+
+<ul>
+<li><b>atomicidade</b>: todas as operações contidas na
+transação são tratadas como uma única unidade. Todas as operações
+são feitas ou nada é feito.</li>
+<li><b>consistência</b>: uma transação concluída deixa o
+sistema em um estado interno consistente.</li>
+<li><b>isolamento</b>: em um ambiente de múltiplas transações,
+uma não interfere na outra.</li>
+<li><b>durabilidade</b>: os resultados das transações são
+armazenadas permanentemente no sistema.</li>
+</ul>
+
+<a name="niveis_de_isolamento_suportados"></a>
+<h2 id="niveis_de_isolamento_suportados">Níveis de isolamento suportados</h2>
+<p>Na atual versão do Calypte, somente o nível de isolamento
+READ COMMITTED é suportado. Ele permite que uma transação leia e
+manipule os dados já confirmados por outras transações. As
+alterações dentro de uma transação somente ficarão visíveis para as
+demais após a sua confirmação. Esse nível de isolamento evita a
+leitura suja, porém, permite a leitura fantasma e a leitura não
+repetitiva.</p>
+
+<a name="iniciando_uma_transacao"></a>
+<h2>Iniciando uma transação</h2>
+<p>Uma transação é iniciada com o uso do comando
+<code>begin</code> e finalizada com o comando <code>commit</code> ou <code>rollback</code>.</p>
+
+<a name="begin"></a>
+<h2>Comando begin</h2>
+<p>O comando <code>begin</code> marca o inicio de uma transação. Será retornado
+<code>ok</code> se o comando for executado com sucesso ou uma mensagem de erro.
+Após executado o comando, as operações serão agrupadas em uma transação que
+deve ser confirmada com o comando <code>commit</code> ou descartadas com o
+comando <code>rollback</code>.
+<pre class="brush: bash;">//inicia a transação.
+begin
+ok
+</pre>
+
+<a name="commit"></a>
+<h2>Comando commit</h2>
+<p>O comando <code>commit</code> confirma todas as operações da transação
+atual e libera todos os bloqueios detidos pela atual sessão.</p>
+<p>Será retornado <code>ok</code> se o comando for executado com sucesso ou uma mensagem de erro.</p>
+<pre class="brush: bash;">//inicia a transação.
+begin
+ok
+...
+//confirma todas as operações
+commit
+ok
+</pre>
+
+<a name="rollback"></a>
+<h2>Comando rollback</h2>
+<p>O comando <code>rollback</code> desfaz todas as operações da transação
+atual e libera todos os bloqueios detidos pela atual sessão.</p>
+<p>Será retornado <code>ok</code> se o comando for executado com sucesso ou uma mensagem de erro.</p>
+<pre class="brush: bash;">//inicia a transação.
+begin
+ok
+...
+//cancela todas as operações.
+rollback
+ok</pre>
+
+<a name="modo_de_confirmacao_automatica"></a>
+<h2>Modo de confirmação automática</h2>
+<p>Uma outra forma de iniciar e finalizar transações é usando o modo de confirmação
+automática. Ele é ligado e desligado com o comando <code>set_var auto_commit valor</code>.
+Para iniciar o modo de confirmação automática o <code>valor</code> tem que ser <code>true</code>
+e para desligá-lo <code>false</code>. Ao religá-lo, todas as operações executadas após seu
+desligamento serão confirmadas. Isto equivale ao comando <code>commit</code>.
+Se o modo de confirmação automática estiver ligado, todas as operações serão tratadas
+como transações individuais. Caso contrário, as operações serão
+agrupadas em uma transação que pode ser confirmada com o comando <code>commit</code>
+ou descartadas com o comando <code>rollback</code>.</p>
+<p>Por padrão, cada nova conexão inicia com o modo de confirmação automática ligada.</p>
+<pre class="brush: bash;">//inicia a transação.
+set_var auto_commit false
+ok
+...
+//confirma todas as operações.
+set_var auto_commit true
+ok</pre>
+
+<a name="evitando_a_leitura_fantasma_e_leitura_nao_repetitiva"></a>
+<h2>Evitando a leitura fantasma e leitura não repetitiva</h2>
+<p>Para resolver o problema de leitura fantasma e leitura não
+repetitiva, é oferecido a opção de bloquear um determinado
+item no momento de sua seleção. A opção é o parâmetro forUpdate do
+	comando <code>get</code> que tem que ser <code>1</code>.</p>
+	<p>Depois que o comando <code>get</code> é
+	executado, o item fica bloqueado até que o comando <code>commit</code> ou
+	<code>rollback</code> seja executado.</p>
+	<pre class="brush: bash;">//inicia a transação
+begin
+ok
+
+//obtém o valor e o bloqueia
+get key 1
+value key 5 0
+12345
+end
+
+//atualiza o valor
+set key 0 0 5
+00000
+end
+replaced
+
+//confirma a alteração
+commit
+ok
+</pre>
+ 
+        </div><!--/.col-xs-12.col-sm-9-->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2018 Calypte Labs.</p>
+      </footer>
+
+    </div><!--/.container-->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./lib/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./lib/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./lib/offcanvas/js/offcanvas.js"></script>
+  </body>
+</html>
